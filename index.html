@@ -27,7 +27,6 @@
                     <span class="font-bold text-3xl tracking-tighter">WILDMORA</span>
                 </div>
 
-                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
                     <a href="#shop" class="hover:text-[#2E5A3C]">Shop</a>
                     <a href="#story" class="hover:text-[#2E5A3C]">Our Story</a>
@@ -38,8 +37,7 @@
                 <div class="flex items-center gap-x-4">
                     <a href="https://www.instagram.com/wildmora_jewelry/" target="_blank" class="text-xl hover:text-[#2E5A3C]"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.etsy.com/shop/Wildmora" target="_blank" class="px-5 py-2.5 text-sm font-semibold bg-[#2E5A3C] text-white rounded-full hover:bg-[#1f3d29]">Shop on Etsy</a>
-                    <!-- Mobile Menu Button -->
-                    <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center text-2xl text-[#2c2522]">
+                    <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center text-2xl">
                         <i class="fa-solid fa-bars"></i>
                     </button>
                 </div>
@@ -47,10 +45,12 @@
         </div>
     </nav>
 
-    <!-- HERO -->
+    <!-- HERO - Less zoomed, brighter -->
     <header class="relative h-[100dvh] min-h-[680px] flex items-center justify-center overflow-hidden">
-        <img src="images/hero.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Wildmora Hero">
-        <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
+        <img src="images/hero.jpg" 
+             class="absolute inset-0 w-full h-full object-cover object-center" 
+             alt="Wildmora Hero">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/50"></div>
         <div class="relative z-10 text-center text-white px-6 max-w-4xl">
             <div class="inline-block bg-white/90 text-[#2c2522] px-6 py-2 rounded-full text-sm mb-6">HANDCRAFTED IN ECUADOR</div>
             <h1 class="heading-serif text-7xl md:text-[5.5rem] leading-none tracking-tighter mb-4">Wildmora</h1>
@@ -97,9 +97,12 @@
     </section>
 
     <!-- ARTISANS -->
-    <section id="artisans" class="max-w-7xl mx-auto px-6 py-16">
-        <h2 class="heading-serif text-5xl tracking-tighter text-center mb-12">The Artisans</h2>
-        <img src="images/artisan.jpg" class="mx-auto rounded-3xl shadow-2xl max-w-2xl" alt="Artisan">
+    <section id="artisans" class="max-w-7xl mx-auto px-6 py-16 bg-white">
+        <div class="text-center mb-12">
+            <h2 class="heading-serif text-5xl tracking-tighter">The Artisans</h2>
+            <p class="mt-4 text-lg text-[#6b5c4f]">Skilled indigenous women from Ecuador crafting each piece with tradition and care</p>
+        </div>
+        <img src="images/artisan.jpg" class="mx-auto rounded-3xl shadow-2xl max-w-4xl w-full" alt="Artisan">
     </section>
 
     <!-- GALLERY -->
@@ -120,33 +123,31 @@
 
     <!-- MOBILE MENU -->
     <script>
-        const mobileBtn = document.getElementById('mobile-menu-btn');
-        mobileBtn.addEventListener('click', () => {
-            const menuHTML = `
-                <div id="mobile-menu" class="fixed inset-0 bg-black/70 z-[100] flex items-start justify-end md:hidden">
-                    <div class="bg-white w-4/5 h-full p-8 shadow-xl">
-                        <div class="flex justify-between items-center mb-10">
-                            <div class="flex items-center gap-x-3">
-                                <div class="w-9 h-9 bg-[#2E5A3C] rounded-full flex items-center justify-center">
-                                    <i class="fa-solid fa-butterfly text-white"></i>
-                                </div>
-                                <span class="font-bold text-3xl tracking-tighter">WILDMORA</span>
+        document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+            const menu = document.createElement('div');
+            menu.className = 'fixed inset-0 bg-black/70 z-[100] flex items-start justify-end md:hidden';
+            menu.innerHTML = `
+                <div class="bg-white w-4/5 h-full p-8 overflow-auto">
+                    <div class="flex justify-between items-center mb-10">
+                        <div class="flex items-center gap-x-3">
+                            <div class="w-9 h-9 bg-[#2E5A3C] rounded-full flex items-center justify-center">
+                                <i class="fa-solid fa-butterfly text-white"></i>
                             </div>
-                            <button onclick="this.closest('#mobile-menu').remove()" class="text-4xl">×</button>
+                            <span class="font-bold text-3xl tracking-tighter">WILDMORA</span>
                         </div>
-                        <div class="flex flex-col gap-y-6 text-xl">
-                            <a href="#shop" onclick="this.closest('#mobile-menu').remove()" class="py-2">Shop</a>
-                            <a href="#story" onclick="this.closest('#mobile-menu').remove()" class="py-2">Our Story</a>
-                            <a href="#artisans" onclick="this.closest('#mobile-menu').remove()" class="py-2">The Artisans</a>
-                            <a href="#gallery" onclick="this.closest('#mobile-menu').remove()" class="py-2">Gallery</a>
-                        </div>
+                        <button class="text-4xl leading-none">×</button>
+                    </div>
+                    <div class="flex flex-col gap-y-6 text-xl">
+                        <a href="#shop" class="py-2">Shop</a>
+                        <a href="#story" class="py-2">Our Story</a>
+                        <a href="#artisans" class="py-2">The Artisans</a>
+                        <a href="#gallery" class="py-2">Gallery</a>
                     </div>
                 </div>
             `;
-            document.body.insertAdjacentHTML('beforeend', menuHTML);
+            document.body.appendChild(menu);
+            menu.querySelector('button').onclick = () => menu.remove();
         });
-
-        console.log("%cWildmora website with mobile menu ready!", "color:#2E5A3C;font-size:16px");
     </script>
 </body>
 </html>
