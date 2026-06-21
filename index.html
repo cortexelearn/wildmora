@@ -26,15 +26,22 @@
                     </div>
                     <span class="font-bold text-3xl tracking-tighter">WILDMORA</span>
                 </div>
+
+                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center gap-x-8 text-sm font-medium">
                     <a href="#shop" class="hover:text-[#2E5A3C]">Shop</a>
                     <a href="#story" class="hover:text-[#2E5A3C]">Our Story</a>
                     <a href="#artisans" class="hover:text-[#2E5A3C]">The Artisans</a>
                     <a href="#gallery" class="hover:text-[#2E5A3C]">Gallery</a>
                 </div>
+
                 <div class="flex items-center gap-x-4">
                     <a href="https://www.instagram.com/wildmora_jewelry/" target="_blank" class="text-xl hover:text-[#2E5A3C]"><i class="fa-brands fa-instagram"></i></a>
                     <a href="https://www.etsy.com/shop/Wildmora" target="_blank" class="px-5 py-2.5 text-sm font-semibold bg-[#2E5A3C] text-white rounded-full hover:bg-[#1f3d29]">Shop on Etsy</a>
+                    <!-- Mobile Menu Button -->
+                    <button id="mobile-menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center text-2xl text-[#2c2522]">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -42,7 +49,7 @@
 
     <!-- HERO -->
     <header class="relative h-[100dvh] min-h-[680px] flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://picsum.photos/id/1016/2000/1200')] bg-cover bg-center"></div>
+        <img src="images/hero.jpg" class="absolute inset-0 w-full h-full object-cover" alt="Wildmora Hero">
         <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/60"></div>
         <div class="relative z-10 text-center text-white px-6 max-w-4xl">
             <div class="inline-block bg-white/90 text-[#2c2522] px-6 py-2 rounded-full text-sm mb-6">HANDCRAFTED IN ECUADOR</div>
@@ -60,14 +67,14 @@
         <h2 class="heading-serif text-5xl tracking-tighter text-center mb-12">Featured Pieces</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             <div class="product-card bg-white rounded-3xl overflow-hidden border border-[#e8d9c2]">
-                <img src="https://picsum.photos/id/1005/600/600" class="w-full aspect-square object-cover" alt="Earrings">
+                <img src="images/earrings.jpg" class="w-full aspect-square object-cover" alt="Beaded Earrings">
                 <div class="p-6">
                     <h3 class="font-semibold text-lg">Beaded Dangle Earrings</h3>
                     <p class="text-sm text-[#6b5c4f]">$28 • Free Shipping</p>
                 </div>
             </div>
             <div class="product-card bg-white rounded-3xl overflow-hidden border border-[#e8d9c2]">
-                <img src="https://picsum.photos/id/201/600/600" class="w-full aspect-square object-cover" alt="Necklace">
+                <img src="images/necklace.jpg" class="w-full aspect-square object-cover" alt="Statement Necklace">
                 <div class="p-6">
                     <h3 class="font-semibold text-lg">Statement Beaded Necklace</h3>
                     <p class="text-sm text-[#6b5c4f]">$45 • Free Shipping</p>
@@ -81,22 +88,27 @@
         <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center">
             <div class="md:col-span-7">
                 <h2 class="heading-serif text-6xl tracking-tighter mb-6">Our Story</h2>
-                <p class="text-lg">Wildmora was created by Katherin Paredes to honor and support indigenous Ecuadorian women artisans. Each piece carries the spirit of the Amazon.</p>
+                <p class="text-lg">Wildmora was created by Katherin Paredes to honor and support indigenous Ecuadorian women artisans.</p>
             </div>
             <div class="md:col-span-5">
-                <img src="https://picsum.photos/id/1011/800/600" class="rounded-3xl shadow-2xl" alt="Katherin with artisan">
+                <img src="images/katherin-story.jpg" class="rounded-3xl shadow-2xl" alt="Katherin">
             </div>
         </div>
+    </section>
+
+    <!-- ARTISANS -->
+    <section id="artisans" class="max-w-7xl mx-auto px-6 py-16">
+        <h2 class="heading-serif text-5xl tracking-tighter text-center mb-12">The Artisans</h2>
+        <img src="images/artisan.jpg" class="mx-auto rounded-3xl shadow-2xl max-w-2xl" alt="Artisan">
     </section>
 
     <!-- GALLERY -->
     <section id="gallery" class="max-w-7xl mx-auto px-6 py-16">
         <h2 class="heading-serif text-5xl tracking-tighter text-center mb-12">Gallery</h2>
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-            <img src="https://picsum.photos/id/160/600/600" class="rounded-2xl" alt="">
-            <img src="https://picsum.photos/id/251/600/600" class="rounded-2xl" alt="">
-            <img src="https://picsum.photos/id/1009/600/600" class="rounded-2xl" alt="">
-            <img src="https://picsum.photos/id/29/600/600" class="rounded-2xl" alt="">
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <img src="images/gallery1.jpg" class="rounded-2xl" alt="">
+            <img src="images/gallery2.jpg" class="rounded-2xl" alt="">
+            <img src="images/gallery3.jpg" class="rounded-2xl" alt="">
         </div>
     </section>
 
@@ -106,8 +118,35 @@
         <a href="https://www.etsy.com/shop/Wildmora" target="_blank" class="mt-6 inline-block px-8 py-3 bg-white text-[#2E5A3C] font-semibold rounded-full">Visit Etsy Shop</a>
     </footer>
 
+    <!-- MOBILE MENU -->
     <script>
-        console.log("%cWildmora website loaded successfully!", "color:#2E5A3C;font-size:16px");
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        mobileBtn.addEventListener('click', () => {
+            const menuHTML = `
+                <div id="mobile-menu" class="fixed inset-0 bg-black/70 z-[100] flex items-start justify-end md:hidden">
+                    <div class="bg-white w-4/5 h-full p-8 shadow-xl">
+                        <div class="flex justify-between items-center mb-10">
+                            <div class="flex items-center gap-x-3">
+                                <div class="w-9 h-9 bg-[#2E5A3C] rounded-full flex items-center justify-center">
+                                    <i class="fa-solid fa-butterfly text-white"></i>
+                                </div>
+                                <span class="font-bold text-3xl tracking-tighter">WILDMORA</span>
+                            </div>
+                            <button onclick="this.closest('#mobile-menu').remove()" class="text-4xl">×</button>
+                        </div>
+                        <div class="flex flex-col gap-y-6 text-xl">
+                            <a href="#shop" onclick="this.closest('#mobile-menu').remove()" class="py-2">Shop</a>
+                            <a href="#story" onclick="this.closest('#mobile-menu').remove()" class="py-2">Our Story</a>
+                            <a href="#artisans" onclick="this.closest('#mobile-menu').remove()" class="py-2">The Artisans</a>
+                            <a href="#gallery" onclick="this.closest('#mobile-menu').remove()" class="py-2">Gallery</a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', menuHTML);
+        });
+
+        console.log("%cWildmora website with mobile menu ready!", "color:#2E5A3C;font-size:16px");
     </script>
 </body>
 </html>
